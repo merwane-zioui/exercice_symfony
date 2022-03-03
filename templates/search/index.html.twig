@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Exercice Symfony{% endblock %}
+
+{% block body %}
+	<form class="row g-3 needs-validation" novalidate>
+		<div class="col-md-4">
+			<div class="input-group has-validation">
+				<input type="text" class="form-control" id="validationCustomUsername" required>
+				<div class="invalid-feedback">
+					Please enter a name.
+				</div>
+			</div>
+		</div>
+		<div class="col-12">
+			<button class="btn btn-primary" type="submit">Submit form</button>
+		</div>
+	</form>
+{% endblock %}

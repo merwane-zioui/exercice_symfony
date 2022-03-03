@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomepageController extends AbstractController
+class ComparisonController extends AbstractController
 {
-    #[Route('/', name: 'app_homepage')]
+    #[Route('/comparison', name: 'app_comparison')]
     public function index(): Response
     {
-        return $this->render('homepage/index.html.twig', [
-            'controller_name' => 'HomepageController',
+        return $this->render('comparison/index.html.twig', [
+            'controller_name' => 'ComparisonController',
         ]);
     }
 }
