@@ -3,18 +3,23 @@
 {% block title %}Hello ComparisonController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/merwa/Desktop/L3/S6/Web/Projects/exercice_symfony/src/Controller/ComparisonController.php'|file_link(0) }}">src/Controller/ComparisonController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/merwa/Desktop/L3/S6/Web/Projects/exercice_symfony/templates/comparison/index.html.twig'|file_link(0) }}">templates/comparison/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <h1>Comparator</h1>
+    {% if ids|length > 0 %}
+        <p>You're going to compare the following players :</p>
+        {% for id in ids %}
+            <div class="row p-2">
+                <div class="col">
+                    ID : {{ id }}
+                </div>
+                <div class="col">
+                    <a class="btn btn-danger" href="{{ path('app_comparison_remove', {'id': id}) }}">Remove player from comparison</a>
+                </div>
+            </div>
+        {% endfor %}
+        {% if ids|length > 1 %}
+            <a class="btn btn-primary" href="{{ path('app_comparison_create') }}">Start comparing</a>
+        {% endif %}
+    {% else %}
+        <p>You have no players to compare for the moment !</p>
+    {% endif %}
 {% endblock %}

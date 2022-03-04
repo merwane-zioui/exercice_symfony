@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ResultController!{% endblock %}
+
+{% block body %}
+    <h1>Your comparison</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td scope="col">Player ID</td>
+                <td scope="col">Games played</td>
+                <td scope="col">Season</td>
+                <td scope="col">Points per game</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in averages['data'] %}
+            <tr>
+                <th scope="row">{{ s.player_id }}</th>
+                <td>{{ s.games_played }}</td>
+                <td>{{ s.season }}</td>
+                <td>{{ s.pts }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

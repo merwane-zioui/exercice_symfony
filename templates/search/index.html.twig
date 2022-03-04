@@ -3,17 +3,58 @@
 {% block title %}Exercice Symfony{% endblock %}
 
 {% block body %}
-	<form class="row g-3 needs-validation" novalidate>
-		<div class="col-md-4">
-			<div class="input-group has-validation">
-				<input type="text" class="form-control" id="validationCustomUsername" required>
-				<div class="invalid-feedback">
-					Please enter a name.
+	<div class="container p-2">
+		{{ form_start(form) }}
+		{{ form_end(form) }}
+
+
+		{% for item in ids %}
+			{{ item }}
+		{% endfor %}
+
+		{{ ids|length }} player(s) in comparison.
+		{% if ids|length > 1 %}
+			<a href="">Start comparing</a>
+		{% endif %}
+	</div>
+
+	<div class="container align-content-between">
+		{% if results is defined %}
+			{% for player in results['data'] %}
+				<div class="row p-2">
+					<div class="col">
+						{{ player.id }}
+					</div>
+					<div class="col">
+						{{ player.first_name }}
+					</div>
+					<div class="col">
+						{{ player.last_name }}
+					</div>
+					<div class="col">
+						{% if player.id in ids %}
+							<a class="btn btn-danger" href="{{ path('app_comparison_remove', {'id': player.id}) }}">Remove player from comparison</a>
+						{% else %}
+							<a class="btn btn-primary" href="{{ path('app_comparison_add', {'id': player.id}) }}">Add player to comparison</a>
+						{% endif %}
+					</div>
 				</div>
-			</div>
-		</div>
-		<div class="col-12">
-			<button class="btn btn-primary" type="submit">Submit form</button>
-		</div>
-	</form>
+			{% endfor %}
+
+			<nav aria-label="Page navigation">
+				<ul class="pagination">
+					{% if results['meta'].current_page > 1 %}
+						<li class="page-item"><a class="page-link" href="{{ path('app_result', {'name': app.request.attributes.get('_route_params').name,
+							'page': results['meta'].current_page - 1 }) }}">Previous</a></li>
+					{% endif %}
+					<li class="page-item"><a class="page-link" href="#">{{ results['meta'].current_page }}</a></li>
+					{% if results['meta'].next_page %}
+						<li class="page-item"><a class="page-link" href="{{ path('app_result', {'name': app.request.attributes.get('_route_params').name,
+								'page': results['meta'].next_page }) }}" >Next</a></li>
+					{% endif %}
+				</ul>
+			</nav>
+
+		{% endif %}
+	</div>
 {% endblock %}
