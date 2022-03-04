@@ -6,16 +6,25 @@
     <h1>Comparator</h1>
     {% if ids|length > 0 %}
         <p>You're going to compare the following players :</p>
-        {% for id in ids %}
-            <div class="row p-2">
-                <div class="col">
-                    ID : {{ id }}
-                </div>
-                <div class="col">
-                    <a class="btn btn-danger" href="{{ path('app_comparison_remove', {'id': id}) }}">Remove player from comparison</a>
-                </div>
-            </div>
-        {% endfor %}
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <td scope="col">Player ID</td>
+                <td scope="col"></td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for id in ids %}
+                <tr>
+                    <td>{{ id }}</td>
+                    <td>
+                        <a class="btn btn-danger" href="{{ path('app_comparison_remove', {'id': id}) }}">Remove player from comparison</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
         {% if ids|length > 1 %}
             <a class="btn btn-primary" href="{{ path('app_comparison_create') }}">Start comparing</a>
         {% endif %}
