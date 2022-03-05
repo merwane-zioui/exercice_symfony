@@ -1,0 +1,1 @@
+(self.webpackChunk=self.webpackChunk||[]).push([[505],{3156:(e,r,a)=>{var o=a(9755);o(document).on("click","a.remove-player",(function(){var e=o(this).closest("li");o.ajax({url:"/removeFromComparator/"+e.attr("id"),processData:!1}).done((function(r){e.remove()}))}))}},e=>{e.O(0,[755],(()=>{return r=3156,e(e.s=r);var r}));e.O()}]);

@@ -2,39 +2,39 @@
   "entrypoints": {
     "app": {
       "js": [
-        "/build/runtime.js",
-        "/build/vendors-node_modules_jquery_dist_jquery_js.js",
-        "/build/vendors-node_modules_core-js_internals_export_js-node_modules_core-js_internals_object-keys_js.js",
-        "/build/vendors-node_modules_core-js_modules_es_array_for-each_js-node_modules_core-js_modules_es_obj-d12f93.js",
-        "/build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_core-js_modules_es_array-c438ee.js",
-        "/build/app.js"
+        "/build/runtime.059c4460.js",
+        "/build/755.5a8586e9.js",
+        "/build/160.f727e544.js",
+        "/build/882.2c2613ff.js",
+        "/build/439.c8a55550.js",
+        "/build/app.6cbe0322.js"
       ],
       "css": [
-        "/build/app.css"
+        "/build/app.b1d5c1ab.css"
       ]
     },
     "comparisonStorage": {
       "js": [
-        "/build/runtime.js",
-        "/build/vendors-node_modules_jquery_dist_jquery_js.js",
-        "/build/comparisonStorage.js"
+        "/build/runtime.059c4460.js",
+        "/build/755.5a8586e9.js",
+        "/build/comparisonStorage.9e177e05.js"
       ]
     },
     "comparisonViewer": {
       "js": [
-        "/build/runtime.js",
-        "/build/vendors-node_modules_jquery_dist_jquery_js.js",
-        "/build/vendors-node_modules_core-js_internals_export_js-node_modules_core-js_internals_object-keys_js.js",
-        "/build/comparisonViewer.js"
+        "/build/runtime.059c4460.js",
+        "/build/755.5a8586e9.js",
+        "/build/160.f727e544.js",
+        "/build/comparisonViewer.a47b142f.js"
       ]
     },
     "results": {
       "js": [
-        "/build/runtime.js",
-        "/build/vendors-node_modules_jquery_dist_jquery_js.js",
-        "/build/vendors-node_modules_core-js_internals_export_js-node_modules_core-js_internals_object-keys_js.js",
-        "/build/vendors-node_modules_core-js_modules_es_array_for-each_js-node_modules_core-js_modules_es_obj-d12f93.js",
-        "/build/results.js"
+        "/build/runtime.059c4460.js",
+        "/build/755.5a8586e9.js",
+        "/build/160.f727e544.js",
+        "/build/882.2c2613ff.js",
+        "/build/results.6ef08f49.js"
       ]
     }
   }
