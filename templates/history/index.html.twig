@@ -3,30 +3,33 @@
 {% block title %}History{% endblock %}
 
 {% block body %}
-    {% if history|length > 0 %}
-        <h1>Here's your history</h1>
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <td scope="col">Comparison ID</td>
-                <td scope="col">Date</td>
-                <td scope="col"></td>
-            </tr>
-            </thead>
-            <tbody>
-            {% for comparison in history %}
-                <tr>
-                    <td>{{ comparison.id }}</td>
-                    <td>{{ comparison.date|date }}</td>
-                    <td>
-                        <a class="btn btn-primary" href="{{ path('app_result_comparison', {'id':comparison.id}) }}">See comparison</a>
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+	<div class="container">
+		{% if history|length > 0 %}
+			<h1 class="lead">Here's your history 📚</h1>
+			<table class="table table-hover">
+				<thead>
+				<tr>
+					<td scope="col">Comparison ID</td>
+					<td scope="col">Date</td>
+					<td scope="col"></td>
+				</tr>
+				</thead>
+				<tbody>
+				{% for comparison in history %}
+					<tr>
+						<td>{{ comparison.id }}</td>
+						<td>{{ comparison.date|date }}</td>
+						<td>
+							<a class="btn btn-primary" href="{{ path('app_result_comparison', {'id':comparison.id}) }}">See
+								comparison</a>
+						</td>
+					</tr>
+				{% endfor %}
+				</tbody>
+			</table>
 
-    {% else %}
-        <h1>You've never compared players !</h1>
-    {% endif %}
+		{% else %}
+			<h1>You've never compared players !</h1>
+		{% endif %}
+	</div>
 {% endblock %}

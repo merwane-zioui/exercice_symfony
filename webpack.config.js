@@ -22,6 +22,12 @@ Encore
      */
     .addEntry('app', './assets/app.js')
 
+    .addEntry('comparisonStorage', './assets/comparisonStorage.js')
+
+    .addEntry('comparisonViewer', './assets/comparisonViewer.js')
+
+    .addEntry('results', './assets/results.js')
+
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
 

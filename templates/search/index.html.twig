@@ -8,7 +8,7 @@
 		{{ form_end(form) }}
 
 		<div class="justify-content-center">
-			<h2>Your selection</h2>
+			<h2 class="lead">Your selection ☑</h2>
 			<ul id="comparatorList">
 				{% for item in ids %}
 					<li id="{{ item }}">
@@ -42,12 +42,11 @@
 		{% endif %}
 	</div>
 
-	<script src="{{ asset('comparisonStorage.js') }}"></script>
+	{{ encore_entry_script_tags('comparisonStorage') }}
 	{% if results is defined %}
 		<script>
             var data = {{ (results.data|json_encode|raw) }};
-
 		</script>
-		<script src="{{ asset('results.js') }}"></script>
+		{{ encore_entry_script_tags('results') }}
 	{% endif %}
 {% endblock %}

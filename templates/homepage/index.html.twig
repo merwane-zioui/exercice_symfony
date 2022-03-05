@@ -3,8 +3,45 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-	<section class="text-center">
-		<h1 class="fw-light">Welcome to my Symfony exercise !</h1>
-		<p class="lead text-muted">Example of the use of the Balldontlie.io API.</p>
-	</section>
+	<div class="container my-4">
+		<div class="bg-light p-5 rounded text-center">
+			<h1>Welcome to Ballerz ! 🏀</h1>
+			<p class="lead">Where all NBA fans gather.</p>
+			<a href="https://www.balldontlie.io/">This tool is powered by Balldontlie.io API.</a>
+		</div>
+	</div>
+
+<div class="container">
+
+	<!-- Three columns of text below the carousel -->
+	<div class="row">
+		<div class="col-lg-4">
+			<h1 class="rounded-circle">🔍</h1>
+			<h2>Search</h2>
+			<p>Search among players from 1979 to nowadays</p>
+			<p><a class="btn btn-secondary" href="{{ path('app_search') }}">Start searching &raquo;</a></p>
+		</div><!-- /.col-lg-4 -->
+		<div class="col-lg-4">
+			<h1 class="rounded-circle">📚</h1>
+			<h2>History</h2>
+			<p>Check some of the most recent comparisons made by users like you.</p>
+			<p><a class="btn btn-secondary" href="{{ path('app_history') }}">View history &raquo;</a></p>
+		</div><!-- /.col-lg-4 -->
+		<div class="col-lg-4">
+			<h1 class="rounded-circle">📊</h1>
+			<h2>Compare</h2>
+			<p>Compare your favourite players' stats during the 2021-2022 NBA season.</p>
+			<p><a class="btn btn-secondary" href="{{ path('app_comparison') }}">See Comparator &raquo;</a></p>
+		</div>
+	</div>
+
+	<hr class="featurette-divider">
+
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h2 class="featurette-heading">What are you waiting for ? <span class="text-muted">Try it !</span></h2>
+			<p class="lead"></p>
+		</div>
+	</div>
+
 {% endblock %}

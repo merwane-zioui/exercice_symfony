@@ -3,32 +3,35 @@
 {% block title %}Comparison{% endblock %}
 
 {% block body %}
-    <h1>Comparator</h1>
-    {% if ids|length > 0 %}
-        <p>You're going to compare the following players :</p>
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <td scope="col">Player ID</td>
-                <td scope="col"></td>
-            </tr>
-            </thead>
-            <tbody>
-            {% for id in ids %}
-                <tr>
-                    <td>{{ id }}</td>
-                    <td>
-                        <a class="btn btn-danger" href="{{ path('app_comparison_remove', {'id': id}) }}">Remove player from comparison</a>
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+	<div class="container">
+		<h1>Comparator ☑</h1>
+		{% if ids|length > 0 %}
+			<p>You're going to compare the following players :</p>
+			<table class="table table-hover">
+				<thead>
+				<tr>
+					<td scope="col">Player ID</td>
+					<td scope="col"></td>
+				</tr>
+				</thead>
+				<tbody>
+				{% for id in ids %}
+					<tr>
+						<td>{{ id }}</td>
+						<td>
+							<a class="btn btn-danger" href="{{ path('app_comparison_remove', {'id': id}) }}">Remove
+								player from comparison</a>
+						</td>
+					</tr>
+				{% endfor %}
+				</tbody>
+			</table>
 
-        {% if ids|length > 1 %}
-            <a class="btn btn-primary" href="{{ path('app_comparison_create') }}">Start comparing</a>
-        {% endif %}
-    {% else %}
-        <p>You have no players to compare for the moment !</p>
-    {% endif %}
+			{% if ids|length > 1 %}
+				<a class="btn btn-primary" href="{{ path('app_comparison_create') }}">Start comparing</a>
+			{% endif %}
+		{% else %}
+			<p>You have no players to compare for the moment !</p>
+		{% endif %}
+	</div>
 {% endblock %}

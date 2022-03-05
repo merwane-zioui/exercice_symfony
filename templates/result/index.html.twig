@@ -3,12 +3,13 @@
 {% block title %}Result{% endblock %}
 
 {% block body %}
-	<h1>Your comparison</h1>
-	<table id="example" class="display table table-hover" style="width:100%">
-	</table>
-
+	<div class="container">
+		<h1 class="lead">Your comparison 📊</h1>
+		<table id="example" class="display table table-hover" style="width:100%">
+		</table>
+	</div>
 	<script>
         var data = {{ (averages.data|json_encode|raw) }};
 	</script>
-	<script src="{{ asset('comparisonViewer.js') }}"></script>
+	{{ encore_entry_script_tags('comparisonViewer') }}
 {% endblock %}
