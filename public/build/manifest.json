@@ -1,6 +1,15 @@
 {
-  "build/app.css": "/build/app.b1d5c1ab.css",
-  "build/app.js": "/build/app.e6015432.js",
-  "build/runtime.js": "/build/runtime.61b1725c.js",
-  "build/138.99287f5a.js": "/build/138.99287f5a.js"
+  "build/app.css": "/build/app.css",
+  "build/app.js": "/build/app.js",
+  "build/runtime.js": "/build/runtime.js",
+  "build/node_modules_datatables_net-dt_css_jquery_dataTables_min_css.js": "/build/node_modules_datatables_net-dt_css_jquery_dataTables_min_css.js",
+  "build/node_modules_datatables_net-buttons-dt_css_buttons_dataTables_min_css.js": "/build/node_modules_datatables_net-buttons-dt_css_buttons_dataTables_min_css.js",
+  "build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_core-js_modules_es_array-a421df.js": "/build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_core-js_modules_es_array-a421df.js",
+  "build/vendors-node_modules_datatables_net-dt_css_jquery_dataTables_min_css.css": "/build/vendors-node_modules_datatables_net-dt_css_jquery_dataTables_min_css.css",
+  "build/vendors-node_modules_datatables_net-buttons-dt_css_buttons_dataTables_min_css.css": "/build/vendors-node_modules_datatables_net-buttons-dt_css_buttons_dataTables_min_css.css",
+  "build/images/sort_both.png": "/build/images/sort_both.8b117faa.png",
+  "build/images/sort_asc.png": "/build/images/sort_asc.4bba5919.png",
+  "build/images/sort_desc.png": "/build/images/sort_desc.c4196d32.png",
+  "build/images/sort_desc_disabled.png": "/build/images/sort_desc_disabled.27ac5d1b.png",
+  "build/images/sort_asc_disabled.png": "/build/images/sort_asc_disabled.07c018ae.png"
 }

@@ -3,25 +3,12 @@
 {% block title %}Result{% endblock %}
 
 {% block body %}
-    <h1>Your comparison</h1>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <td scope="col">Player ID</td>
-                <td scope="col">Games played</td>
-                <td scope="col">Season</td>
-                <td scope="col">Points per game</td>
-            </tr>
-        </thead>
-        <tbody>
-            {% for s in averages['data'] %}
-            <tr>
-                <th scope="row">{{ s.player_id }}</th>
-                <td>{{ s.games_played }}</td>
-                <td>{{ s.season }}</td>
-                <td>{{ s.pts }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+	<h1>Your comparison</h1>
+	<table id="example" class="display table table-hover" style="width:100%">
+	</table>
+
+	<script>
+        var data = {{ (averages.data|json_encode|raw) }};
+	</script>
+	<script src="{{ asset('comparisonViewer.js') }}"></script>
 {% endblock %}

@@ -6,6 +6,7 @@ use App\Entity\Comparison;
 use App\Repository\ComparisonRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -82,6 +83,47 @@ class ComparisonController extends AbstractController
 
         return $this->redirectToRoute('app_comparison', [
         ]);
+    }
+
+    #[Route('/addToComparator/{playerid}')]
+    public function addComparisonAjax(Request $request, $playerid)
+    {
+        $sessionComparisons = $request->getSession();
+        $comparisons = $sessionComparisons->get('comparisons');
+        $response = new Response();
+        if($comparisons==null) {
+            $comparisons = [];
+        }
+
+        if(!in_array($playerid, $comparisons)) {
+            $comparisons[] = $playerid;
+            $sessionComparisons->set('comparisons', $comparisons);
+            return $response->setStatusCode(Response::HTTP_OK);
+        }
+
+        else {
+            return $response->setStatusCode(Response::HTTP_NOT_ACCEPTABLE);
+        }
+
+    }
+
+    #[Route('/removeFromComparator/{playerid}')]
+    public function removeComparisonAjax(Request $request, $playerid)
+    {
+        $sessionComparisons = $request->getSession();
+        $comparisons = $sessionComparisons->get('comparisons');
+        $response = new Response();
+
+        if (($key = array_search($playerid, $comparisons)) !== false) {
+            unset($comparisons[$key]);
+            $sessionComparisons->set('comparisons', $comparisons);
+            return $response->setStatusCode(Response::HTTP_OK);
+        }
+
+        else {
+            return $response->setStatusCode(Response::HTTP_NOT_ACCEPTABLE);
+        }
+
     }
 
 }

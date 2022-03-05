@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -56,5 +57,12 @@ class SearchController extends AbstractController
             'results' => $results,
             'form' => $form->createView()
         ]);
+    }
+
+    #[Route('/autocomplete/{name}')]
+    public function searchResultAutocomplete(ApiService $apiService, String $name)
+    {
+        $results = $apiService->getPlayersByName($name, 1);
+        return new JsonResponse($results);
     }
 }
