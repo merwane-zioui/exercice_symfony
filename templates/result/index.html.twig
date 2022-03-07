@@ -3,13 +3,23 @@
 {% block title %}Result{% endblock %}
 
 {% block body %}
-	<div class="container">
+	<div class="container my-4">
 		<h1 class="lead">Your comparison 📊</h1>
+		{% if not_found|length>0 %}
+			<div class="container border m-2 p-2">
+				<h2 class="lead">🤷 No data found for the following players :</h2>
+				{% for id in not_found %}
+					<p>➡️ {{ id }}</p>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+
 		<table id="example" class="display table table-hover" style="width:100%">
 		</table>
 	</div>
 	<script>
-        var data = {{ (averages.data|json_encode|raw) }};
+        var data = {{ (averages|json_encode|raw) }};
 	</script>
 	{{ encore_entry_script_tags('comparisonViewer') }}
 {% endblock %}
