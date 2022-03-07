@@ -42,6 +42,33 @@ class ApiService
             'GET',
             'https://www.balldontlie.io/api/v1/season_averages?'.$paramaters
         );
-        return $response->toArray();
+        $response = $response->toArray()['data'];
+        $not_found=[];
+
+        if(sizeof($response)==0) {
+            return [
+                'response'=>$response,
+                'not_found'=>$ids
+            ];
+        }
+
+        else {
+            foreach ($ids as $id) {
+                for($i=0; $i<sizeof($response); $i++) {
+                    if($id!=$response[$i]['player_id'] && $i==sizeof($response)-1) {
+                        $not_found[]=$id;
+                        break;
+                    }
+                    elseif($id==$response[$i]['player_id']) {
+                        break;
+                    }
+                }
+            }
+        }
+
+        return [
+            'response'=>$response,
+            'not_found'=>$not_found
+        ];
     }
 }

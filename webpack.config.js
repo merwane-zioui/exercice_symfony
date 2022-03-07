@@ -28,6 +28,8 @@ Encore
 
     .addEntry('results', './assets/results.js')
 
+    .addEntry('autocompletion', './assets/form_autocomplete.js')
+
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
 

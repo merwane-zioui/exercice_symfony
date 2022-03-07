@@ -15,11 +15,12 @@ class ResultController extends AbstractController
     {
         $comparison = $doctrine->find($id)->getPlayer();
 
-        $averages = $apiService->getPlayerAverages($comparison);
+        $datas = $apiService->getPlayerAverages($comparison);
 
         return $this->render('result/index.html.twig', [
             'controller_name' => 'ResultController',
-            'averages' => $averages
+            'averages' => $datas['response'],
+            'not_found' => $datas['not_found']
         ]);
     }
 }

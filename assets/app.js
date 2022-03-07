@@ -14,7 +14,7 @@ import('datatables.net-buttons-dt/css/buttons.dataTables.min.css');
 
 // start the Stimulus application
 require('bootstrap');
-//require('bootstrap-autocomplete');
+require('bootstrap-autocomplete');
 
 
 import 'datatables.net-dt';
